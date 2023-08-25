@@ -6,8 +6,7 @@ using namespace std;
 
 int main(){
 
- locale brLocale("pt_BR.UTF-8");
- locale::global(brLocale);
+
 
 float resultado, salario, hora, valorhora, jornadamulti;
 float jornada, insalubridade, ferias, inss;
