@@ -81,17 +81,17 @@ ferias = salario + (salario / 3);
 if (ferias >= 7507.49){
    inss = 876.95;
 }else if(ferias < 7507.49 && ferias >= 3856.95){
-   inss = salario - 3856.95 * 0.14 + (99.00 + 112.61);
+   inss = ((ferias - 3856.95) * 0.14) + 99.00 + 112.61 + 511.07;
 }else if(ferias < 3856.95 && ferias >= 2571.30){
-   inss = salario - 2571.30 * 0.12 + 99.00;
+   inss = ((ferias - 2571.30) * 0.12) + 99.00 + 112.61;
 }else if(ferias < 2571.30 && ferias > 1320.00){
-   inss = salario - 1320 * 0.09 + 99.00; 
+   inss = ((ferias - 1320) * 0.09) + 99.00;
 }else{
    inss = 99.00;
 }
 //ir
 baseir = ferias - inss;
-if (baseir > 4664.69){
+if (baseir >= 4664.69){
    ir = baseir * 0.275 - 884.96;
 }else if(baseir > 3751.07 && baseir <= 4664.68){
    ir = baseir * 0.225 - 651.73;
@@ -103,6 +103,7 @@ if (baseir > 4664.69){
    ir = 0;
 }
 feriasatt = ferias - inss - ir;
+cout << ferias << endl;
 cout << "As férias do indivíduo serão de: " << feriasatt << endl;
 cout << "Sendo o INSS de: " << inss << endl;
 cout << "Sendo o IR de: " << ir << endl;
